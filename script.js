@@ -1,19 +1,9 @@
-function volume_sphere(e) {
-  //Write your code here
-	e.preventDefault();
-  let radius = document.getElementById("radius").value;
-  let vol = document.getElementById("volume");
-  // if (radius.length == 0) vol.value = "NaN";
-  for (let ele of radius) {
-    if (ele >= "0" && ele <= "9") {
-    } else {
-      vol.value = "NaN";
-      break;
-    }
-  }
-
-  if (vol.value !== "NaN")
-    vol.value = ((4 * Math.PI * radius * radius * radius) / 3).toFixed(4);
-}
-
-window.onload = document.getElementById("MyForm").onsubmit = volume_sphere;
+function volume_sphere() {
+    //Write your code here
+	volume.value = (4/3) * Math.PI * Math.pow(radius.value, 3);
+} 
+let cal = document.getElementById('submit');
+cal.addEventListener("click",volume_sphere);
+let radius = document.getElementById('radius');
+let volume =  document.getElementById('volume');
+window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
